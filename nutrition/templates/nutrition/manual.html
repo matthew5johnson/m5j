@@ -1,0 +1,10 @@
+<p>manual.html</p>
+
+<form method="POST" class="post-form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" value="Submit">Save</button>
+</form>
+
+
+<a href="/nutrition/">Return to nutrition home</a>

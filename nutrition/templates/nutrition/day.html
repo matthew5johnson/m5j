@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    </head>
+
+    <body>
+		<table id="morningTable" class="display" style="width:100%">
+			<thead>
+				<tr>
+				    <th>Item</th>
+		            <th>Grams</th>
+		            <th>Cost</th>
+		            <th>$/100cal</th>
+		            <th>CAL</th>
+		            <th>P</th>
+		            <th>F</th>
+		            <th>Chloride</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		    	{% for item in breakfast %}
+		        <tr>
+		        	<td>{{ item.name }}</td>
+		        	<td>{{ item.grams }}</td>
+		        	<td>{{ item.cost_based_on_cal }}</td>
+		        	<td>{{ item.cost_per_100_cal }}</td>
+		        	<td>{{ item.Calories }}</td>
+		        	<td>{{ item.Protein }}</td>
+		        	<td>{{ item.Fattotal }}</td>
+		        	<td>{{ item.Potassium }}</td>
+		        </tr>
+		        {% endfor %}
+		    </tbody>
+		    <tfoot>
+		        <tr>
+		        	{% for title in final_footers %}
+		        	<th>{{ title }}</th>
+		            {% endfor %}
+		        </tr>
+		    </tfoot>
+		</table>
+
+
+
+
+		<a href="/nutrition/">Return to nutrition home</a>
+
+
+
+
+  
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		    
+		<script type="text/javascript">
+			$(document).ready( function () {
+				$('#morningTable').DataTable();
+			} );
+		</script>	  
+
+	</body>
+</html>

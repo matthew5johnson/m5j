@@ -1,0 +1,8 @@
+<p>menu.html</p>
+
+
+{% for entry in menu %}
+	<p> >> <a href="/nutrition/core/edit/{{ entry.pk }}">{{ entry.name }}</a>, {{ entry.state }} || Serving: {{ entry.servingsize|floatformat:1 }}{{ entry.servingsizeunits }}</p>
+{% endfor %}
+
+<a href="/nutrition/">back to nutrition home</a>

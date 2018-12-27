@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<title>Week</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    </head>
+
+    <body>
+    	<h1>Week</h1>
+
+    	<h2>Targets</h2>
+    	<p>Calories: 2,000 per day = 14,000 per week</p>
+
+		<table id="weekTable" class="display" style="width:100%">
+			<thead>
+				<tr>
+					{% for keys in headers %}
+				    <th>{{ keys }}</th>
+					{% endfor %}
+		        </tr>
+		    </thead>
+		    <tbody>
+		    	{% for item in full_item_list %}
+		        <tr>
+		        	<td>{{ item.recipe }}</td>
+					<td><a href="/nutrition/item/edit/{{ item.pk }}">{{ item.name }}</a></td>
+					<td>{{ item.weekly_grams|floatformat:1 }}</td>
+					<td>{{ item.weekly_cost|floatformat:1 }}</td>
+					<td>{{ item.cost_per_100_cal|floatformat:2 }}</td>
+					<td>{{ item.cost_per_g_protein|floatformat:2 }}</td>
+					<td>{{ item.cost_per_g_fiber|floatformat:2 }}</td>
+					<td>{{ item.week_Calories|floatformat:1 }}</td>
+					<td>{{ item.week_Protein|floatformat:1 }}</td>
+					<td>{{ item.week_Fattotal|floatformat:1 }}</td>
+					<td>{{ item.week_Carbohydrates|floatformat:1 }}</td>
+					<td>{{ item.week_DietaryFiber|floatformat:1 }}</td>
+					<td>{{ item.week_Starch|floatformat:1 }}</td>
+					<td>{{ item.week_TotalSugars|floatformat:1 }}</td>
+					<td>{{ item.week_Monosaccharides|floatformat:1 }}</td>
+					<td>{{ item.week_Fructose|floatformat:1 }}</td>
+					<td>{{ item.week_Glucose|floatformat:1 }}</td>
+					<td>{{ item.week_Galactose|floatformat:1 }}</td>
+					<td>{{ item.week_Disaccharides|floatformat:1 }}</td>
+					<td>{{ item.week_Lactose|floatformat:1 }}</td>
+					<td>{{ item.week_Maltose|floatformat:1 }}</td>
+					<td>{{ item.week_Sucrose|floatformat:1 }}</td>
+					<td>{{ item.week_SolubleFiber|floatformat:1 }}</td>
+					<td>{{ item.week_InsolubleFiber|floatformat:1 }}</td>
+					<td>{{ item.week_OtherCarbohydrates|floatformat:1 }}</td>
+					<td>{{ item.week_MonounsaturatedFat|floatformat:1 }}</td>
+					<td>{{ item.week_PolyunsaturatedFat|floatformat:1 }}</td>
+					<td>{{ item.week_SaturatedFat|floatformat:1 }}</td>
+					<td>{{ item.week_TransFat|floatformat:1 }}</td>
+					<td>{{ item.week_Cholesterol|floatformat:1 }}</td>
+					<td>{{ item.week_Water|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB1|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB2|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB3|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB3NiacinEquivalents|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB6|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminB12|floatformat:1 }}</td>
+					<td>{{ item.week_Biotin|floatformat:1 }}</td>
+					<td>{{ item.week_Choline|floatformat:1 }}</td>
+					<td>{{ item.week_Folate|floatformat:1 }}</td>
+					<td>{{ item.week_FolateDFE|floatformat:1 }}</td>
+					<td>{{ item.week_Folatefood|floatformat:1 }}</td>
+					<td>{{ item.week_PantothenicAcid|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminC|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminAInternationalUnitsIU|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminAmcgRetinolActivityEquivalentsRAE|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminAmcgRetinolEquivalentsRE|floatformat:1 }}</td>
+					<td>{{ item.week_RetinolmcgRetinolEquivalentsRE|floatformat:1 }}</td>
+					<td>{{ item.week_CarotenoidmcgRetinolEquivalentsRE|floatformat:1 }}</td>
+					<td>{{ item.week_AlphaCarotene|floatformat:1 }}</td>
+					<td>{{ item.week_BetaCarotene|floatformat:1 }}</td>
+					<td>{{ item.week_BetaCaroteneEquivalents|floatformat:1 }}</td>
+					<td>{{ item.week_Cryptoxanthin|floatformat:1 }}</td>
+					<td>{{ item.week_LuteinandZeaxanthin|floatformat:1 }}</td>
+					<td>{{ item.week_Lycopene|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminDInternationalUnitsIU|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminDmcg|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminEmgAlphaTocopherolEquivalentsATE|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminEInternationalUnitsIU|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminEmg|floatformat:1 }}</td>
+					<td>{{ item.week_VitaminK|floatformat:1 }}</td>
+					<td>{{ item.week_Boron|floatformat:1 }}</td>
+					<td>{{ item.week_Calcium|floatformat:1 }}</td>
+					<td>{{ item.week_Chloride|floatformat:1 }}</td>
+					<td>{{ item.week_Chromium|floatformat:1 }}</td>
+					<td>{{ item.week_Copper|floatformat:1 }}</td>
+					<td>{{ item.week_Fluoride|floatformat:1 }}</td>
+					<td>{{ item.week_Iodine|floatformat:1 }}</td>
+					<td>{{ item.week_Iron|floatformat:1 }}</td>
+					<td>{{ item.week_Magnesium|floatformat:1 }}</td>
+					<td>{{ item.week_Manganese|floatformat:1 }}</td>
+					<td>{{ item.week_Molybdenum|floatformat:1 }}</td>
+					<td>{{ item.week_Phosphorus|floatformat:1 }}</td>
+					<td>{{ item.week_Potassium|floatformat:1 }}</td>
+					<td>{{ item.week_Selenium|floatformat:1 }}</td>
+					<td>{{ item.week_Sodium|floatformat:1 }}</td>
+					<td>{{ item.week_Zinc|floatformat:1 }}</td>
+					<td>{{ item.week_Omega3FattyAcids|floatformat:1 }}</td>
+					<td>{{ item.week_Omega6FattyAcids|floatformat:1 }}</td>
+					<td>{{ item.week_a141Myristoleic|floatformat:1 }}</td>
+					<td>{{ item.week_a151Pentadecenoic|floatformat:1 }}</td>
+					<td>{{ item.week_a161Palmitol|floatformat:1 }}</td>
+					<td>{{ item.week_a171Heptadecenoic|floatformat:1 }}</td>
+					<td>{{ item.week_a181Oleic|floatformat:1 }}</td>
+					<td>{{ item.week_a201Eicosenoic|floatformat:1 }}</td>
+					<td>{{ item.week_a221Erucic|floatformat:1 }}</td>
+					<td>{{ item.week_a241Nervonic|floatformat:1 }}</td>
+					<td>{{ item.week_a182Linoleic|floatformat:1 }}</td>
+					<td>{{ item.week_a182ConjugatedLinoleicCLA|floatformat:1 }}</td>
+					<td>{{ item.week_a183Linolenic|floatformat:1 }}</td>
+					<td>{{ item.week_a184Stearidonic|floatformat:1 }}</td>
+					<td>{{ item.week_a203Eicosatrienoic|floatformat:1 }}</td>
+					<td>{{ item.week_a204Arachidonic|floatformat:1 }}</td>
+					<td>{{ item.week_a205EicosapentaenoicEPA|floatformat:1 }}</td>
+					<td>{{ item.week_a225DocosapentaenoicDPA|floatformat:1 }}</td>
+					<td>{{ item.week_a226DocosahexaenoicDHA|floatformat:1 }}</td>
+					<td>{{ item.week_a40Butyric|floatformat:1 }}</td>
+					<td>{{ item.week_a60Caproic|floatformat:1 }}</td>
+					<td>{{ item.week_a80Caprylic|floatformat:1 }}</td>
+					<td>{{ item.week_a100Capric|floatformat:1 }}</td>
+					<td>{{ item.week_a120Lauric|floatformat:1 }}</td>
+					<td>{{ item.week_a140Myristic|floatformat:1 }}</td>
+					<td>{{ item.week_a150Pentadecanoic|floatformat:1 }}</td>
+					<td>{{ item.week_a160Palmitic|floatformat:1 }}</td>
+					<td>{{ item.week_a170Margaric|floatformat:1 }}</td>
+					<td>{{ item.week_a180Stearic|floatformat:1 }}</td>
+					<td>{{ item.week_a200Arachidic|floatformat:1 }}</td>
+					<td>{{ item.week_a220Behenate|floatformat:1 }}</td>
+					<td>{{ item.week_a240Lignoceric|floatformat:1 }}</td>
+					<td>{{ item.week_Alanine|floatformat:1 }}</td>
+					<td>{{ item.week_Arginine|floatformat:1 }}</td>
+					<td>{{ item.week_AsparticAcid|floatformat:1 }}</td>
+					<td>{{ item.week_Cysteine|floatformat:1 }}</td>
+					<td>{{ item.week_GlutamicAcid|floatformat:1 }}</td>
+					<td>{{ item.week_Glycine|floatformat:1 }}</td>
+					<td>{{ item.week_Histidine|floatformat:1 }}</td>
+					<td>{{ item.week_Isoleucine|floatformat:1 }}</td>
+					<td>{{ item.week_Leucine|floatformat:1 }}</td>
+					<td>{{ item.week_Lysine|floatformat:1 }}</td>
+					<td>{{ item.week_Methionine|floatformat:1 }}</td>
+					<td>{{ item.week_Phenylalanine|floatformat:1 }}</td>
+					<td>{{ item.week_Proline|floatformat:1 }}</td>
+					<td>{{ item.week_Serine|floatformat:1 }}</td>
+					<td>{{ item.week_Threonine|floatformat:1 }}</td>
+					<td>{{ item.week_Tryptophan|floatformat:1 }}</td>
+					<td>{{ item.week_Tyrosine|floatformat:1 }}</td>
+					<td>{{ item.week_Valine|floatformat:1 }}</td>
+					<td>{{ item.week_Ash|floatformat:1 }}</td>
+					<td>{{ item.week_OrganicAcidsTotal|floatformat:1 }}</td>
+					<td>{{ item.week_AceticAcid|floatformat:1 }}</td>
+					<td>{{ item.week_CitricAcid|floatformat:1 }}</td>
+					<td>{{ item.week_LacticAcid|floatformat:1 }}</td>
+					<td>{{ item.week_MalicAcid|floatformat:1 }}</td>
+					<td>{{ item.week_Taurine|floatformat:1 }}</td>
+					<td>{{ item.week_SugarAlcoholsTotal|floatformat:1 }}</td>
+					<td>{{ item.week_Glycerol|floatformat:1 }}</td>
+					<td>{{ item.week_Inositol|floatformat:1 }}</td>
+					<td>{{ item.week_Mannitol|floatformat:1 }}</td>
+					<td>{{ item.week_Sorbitol|floatformat:1 }}</td>
+					<td>{{ item.week_Xylitol|floatformat:1 }}</td>
+					<td>{{ item.week_ArtificialSweetenersTotal|floatformat:1 }}</td>
+					<td>{{ item.week_Aspartame|floatformat:1 }}</td>
+					<td>{{ item.week_Saccharin|floatformat:1 }}</td>
+					<td>{{ item.week_Alcohol|floatformat:1 }}</td>
+					<td>{{ item.week_Caffeine|floatformat:1 }}</td>
+		        </tr>
+		        {% endfor %}
+		    </tbody>
+		    <tfoot>
+		        <tr>
+		        	{% for footers in final_footers %}
+				    <th>{{ footers }}</th>
+					{% endfor %}
+		        </tr>
+		    </tfoot>
+		</table>
+
+
+
+
+		<a href="/nutrition/">Return to nutrition home</a>
+
+
+
+
+  
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		    
+		<script type="text/javascript">
+			$(document).ready( function () {
+				$('#weekTable').DataTable( {
+					"scrollX": true,
+					"paging": false
+					});
+			} );
+		</script>	  
+
+	</body>
+</html>
