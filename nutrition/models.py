@@ -288,7 +288,7 @@ class CoreData(models.Model):
 
 
 	def __str__(self):
-		return self.name
+		return str(self.name)
 
 class Recipe(models.Model):
 	name = models.CharField(max_length=50)
@@ -310,6 +310,7 @@ class Item(models.Model):
 	cost_per_g_protein = models.DecimalField(decimal_places=5, max_digits=20, default=0)
 	cost_per_g_fiber = models.DecimalField(decimal_places=5, max_digits=20, default=0)
 	name = models.ForeignKey(CoreData, on_delete=models.CASCADE)
+	active = models.BooleanField(default=True)
 	recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 	grams = models.DecimalField(decimal_places=3, max_digits=7)
 	weekly_grams = models.DecimalField(decimal_places=3, max_digits=7, default=0)
@@ -616,4 +617,4 @@ class Item(models.Model):
 	week_Caffeine = models.DecimalField(decimal_places=3, max_digits=20, default=0)
 
 	def __str__(self):
-		return self.name
+		return str(self.name)
